@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "last_updated": "YYYY-MM-DD",
+    "current_phase": 1,
+    "current_state": "BUILD"
+  },
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Implement POST /api/expenses endpoint",
+      "status": "todo",
+      "agent": "dev",
+      "github_issue": 12,
+      "size": "M",
+      "phase": 1
+    },
+    {
+      "id": 2,
+      "title": "QA review PR #15",
+      "status": "in_progress",
+      "agent": "qa",
+      "github_issue": 15,
+      "size": "S",
+      "phase": 1
+    },
+    {
+      "id": 3,
+      "title": "Deploy backend to Railway",
+      "status": "done",
+      "agent": "ops",
+      "github_issue": 8,
+      "size": "S",
+      "phase": 1
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "telegram": {
+      "command": "bun",
+      "args": [
+        "run",
+        "--cwd",
+        "~/.claude/plugins/cache/claude-plugins-official/telegram/0.0.4",
+        "--shell=bun",
+        "--silent",
+        "start"
+      ],
+      "env": {
+        "TELEGRAM_BOT_TOKEN": "YOUR_BOT_TOKEN",
+        "TELEGRAM_STATE_DIR": "~/.claude/channels/telegram"
+      }
+    }
+  }
+}

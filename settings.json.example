@@ -1,0 +1,51 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/usage-monitor/session-init.sh 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "ts=$(date -u +%Y-%m-%dT%H:%M:%SZ); cache=\"$HOME/.claude/usage-monitor/usage-cache.json\"; mkdir -p ~/ai-company/history && [ -f \"$cache\" ] && jq -c --arg ts \"$ts\" '. + {session_end: $ts}' \"$cache\" >> ~/ai-company/history/token-usage.jsonl 2>/dev/null || true"
+          },
+          {
+            "type": "command",
+            "command": "TELEGRAM_BOT_TOKEN=$(grep TELEGRAM_BOT_TOKEN ~/.claude/channels/telegram/.env | cut -d= -f2) CHAT_ID=YOUR_TELEGRAM_CHAT_ID bash ~/.claude/usage-monitor/alert.sh >> ~/.claude/usage-monitor/alert.log 2>&1 &"
+          },
+          {
+            "type": "command",
+            "command": "bash ~/.claude/usage-monitor/log-session.sh auto >> ~/.claude/usage-monitor/session-log.log 2>&1 || true"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/usage-monitor/capture.sh"
+  },
+  "enabledPlugins": {
+    "telegram@claude-plugins-official": true,
+    "figma@claude-plugins-official": true,
+    "claude-hud@claude-hud": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-hud": {
+      "source": {
+        "source": "github",
+        "repo": "jarrodwatts/claude-hud"
+      }
+    }
+  },
+  "effortLevel": "low",
+  "skipDangerousModePermissionPrompt": true
+}

@@ -1,0 +1,18 @@
+# Memory Index
+
+## User
+- [user_profile.md](user_profile.md) — Who the founder is, background, communication style
+
+## Project
+- [project_ai_company.md](project_ai_company.md) — Solo AI company vision, current product status
+
+## Reference
+- [reference_github_projects.md](reference_github_projects.md) — GitHub Project board numbers
+- [reference_telegram_setup.md](reference_telegram_setup.md) — Telegram bot config and access policy
+- [reference_token_quota_setup.md](reference_token_quota_setup.md) — Token quota monitoring and fallback
+
+## Feedback
+- [feedback_preferences.md](feedback_preferences.md) — How to work, what to avoid
+- [feedback_autonomous.md](feedback_autonomous.md) — Always continue autonomously, never stop mid-flow
+- [feedback_always_add_to_project.md](feedback_always_add_to_project.md) — Every task must be on a GitHub Project board
+- [feedback_start_working.md](feedback_start_working.md) — "start working" triggers board check → autonomous loop
